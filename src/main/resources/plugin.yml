@@ -1,0 +1,4 @@
+name: KeyPad
+version: ${project.version}
+main: me.ptmdevelopment.net.keypad.KeyPad
+authors: [ JonathanPTM ]
