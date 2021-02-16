@@ -1,7 +1,9 @@
 package me.ptmdevelopment.net.keypad;
 
 import me.ptmdevelopment.net.keypad.Listeners.InteractEvent;
+import me.ptmdevelopment.net.keypad.Listeners.InventoryInteract;
 import me.ptmdevelopment.net.keypad.commands.BlockGUICommand;
+import me.ptmdevelopment.net.keypad.resources.API;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.command.CommandExecutor;
@@ -17,8 +19,10 @@ public final class KeyPad extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+        API.setup(this);
         getServer().getPluginManager().registerEvents(new InteractEvent(), this);
-         this.getCommand("keypad").setExecutor((CommandExecutor) new BlockGUICommand());
+        getServer().getPluginManager().registerEvents(new InventoryInteract(), this);
+        this.getCommand("keypad").setExecutor((CommandExecutor) new BlockGUICommand());
     }
 
     @Override

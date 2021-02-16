@@ -18,8 +18,7 @@ public class BlockGUICommand implements CommandExecutor {
             Player player = (Player) sender;
             if (player.hasPermission("rlw.keypad")) {
                 if (args.length == 0) {
-                    player.sendMessage(colorize("&fUse: /keypad (type)"));
-                    player.sendMessage(colorize("&fUse: /keypad tlist"));
+                    player.sendMessage(colorize("&fUse: /keypad add"));
                 } else {
                     BlockGUICreate.put(player, true);
                     player.sendMessage(colorize("&fRight click now the block to connect."));

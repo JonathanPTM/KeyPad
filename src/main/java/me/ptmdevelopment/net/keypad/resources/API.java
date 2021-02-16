@@ -12,6 +12,15 @@ public class API {
     public static File BlockGuiFile, KeypadsFile;
 
     public static void setup(Plugin plugin){
+        File dataDir = new File(plugin.getDataFolder() + "");
+        if (!dataDir.exists()){
+            try {
+                dataDir.mkdir();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
         KeypadsFile = new File(plugin.getDataFolder(), "database.yml");
         if (!KeypadsFile.exists()){
             try {
