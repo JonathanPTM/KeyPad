@@ -2,3 +2,7 @@ name: KeyPad
 version: ${project.version}
 main: me.ptmdevelopment.net.keypad.KeyPad
 authors: [ JonathanPTM ]
+
+commands:
+  keypad:
+    description: To create keypads.
